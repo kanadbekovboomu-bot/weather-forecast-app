@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода в мире (Open Weather)</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="weather-container">
+    <div class="search-box">
+      <input type="text" id="city-input" placeholder="Введите город (напр. Москва, Алматы, Бишкек)...">
+      <button id="search-btn">🔍 Поиск</button>
+    </div>
+
+    <div id="loading" class="status-msg hidden">Загрузка данных о погоде...</div>
+    <div id="error-msg" class="status-msg error hidden">Город не найден или ошибка сети</div>
+
+    <div id="weather-content" class="weather-content">
+      <div class="current-weather">
+        <div class="city-info">
+          <h2 id="city-name">Москва</h2>
+          <p id="current-date">Сегодня</p>
+        </div>
+        <div class="weather-main">
+          <div class="weather-icon" id="weather-icon">☀️</div>
+          <div class="temp-wrapper">
+            <span id="current-temp">+18</span>
+            <span class="temp-unit">°C</span>
+          </div>
+          <p id="weather-desc" class="weather-desc">Ясно</p>
+        </div>
+
+        <div class="weather-stats">
+          <div class="stat-card">
+            <span class="stat-icon">💨</span>
+            <div>
+              <p class="stat-label">Ветер</p>
+              <p class="stat-value" id="wind-speed">12 км/ч</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">💧</span>
+            <div>
+              <p class="stat-label">Влажность</p>
+              <p class="stat-value" id="humidity">65%</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icon">🌡️</span>
+            <div>
+              <p class="stat-label">Ощущается как</p>
+              <p class="stat-value" id="apparent-temp">+17°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="forecast-section">
+        <h3>Прогноз на 5 дней</h3>
+        <div class="forecast-cards" id="forecast-cards"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
